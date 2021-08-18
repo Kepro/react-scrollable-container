@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "12"
+
+env:
+  - TRAVIS_CI=1
+
+cache:
+  yarn: false
+  directories:
+    - node_modules
+
+install:
+  npm i
+
+script:
+  - npm run tsc:lint
+  - npm run build
